@@ -1,12 +1,16 @@
 package com.mmall.concurrency.example.syncContainer;
 
+import com.mmall.concurrency.annotations.NotThreadSafe;
+
 import java.util.Vector;
 
 /**
  * 同步容器也不安全
- * 在同时进行查询、修改操作时就会报异常（使用for循环时 不报错）
+ * 在同时进行查询、修改操作时就会报异常
+ * 数组越界
  *
  */
+@NotThreadSafe
 public class VectorExample2 {
     private  static Vector<Integer> vector = new Vector<>();
 
@@ -38,6 +42,4 @@ public class VectorExample2 {
 
         }
     }
-
-
 }
